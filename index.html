@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lupirium</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Reggae+One&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <style>
+   body {
+   font-family: Share Tech Mono;
+    font-size: 16px;
+    color: white;
+    margin: 5px;
+    background-color: #C0C0C0;
+  }
+    .roadmap {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      white-space: nowrap;
+    }
+    .phase {
+      margin-right: 20px;
+      min-width: 300px; /* Adjust as needed */
+    }
+    .title {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .task {
+      margin-left: 20px;
+       text-align: left;
+      font-weight: bold;
+    }
+    a {
+  text-decoration: none;
+  color: #ff9900;
+    }
+    h1{
+     text-align: left;
+     font-size: 25px;
+     color: orange;
+    }
+    h2{
+     text-align: center;
+     font-size: 30px;
+     color: red;
+    }
+    h3{
+     text-align: left;
+     font-size: 16px;
+     color: #C0C0C0;
+    }
+    h4{
+     text-align: center;
+     font-size: 20px;
+     color: white;
+    }
+  h5{
+    font-family: Reggae One;
+     text-align: center;
+     font-size: 30px;
+     color: red;
+     margin-left: 5px;
+    }
+   h6{
+     text-align: center;
+     font-size: 25px;
+     color: white;
+     margin-bottom: 5px;
+     margin-top: 5px;
+    }
+   p{
+     text-align: left;
+     font-size: 15px;
+     color: white;
+    }
+   .p2{
+     text-align: left;
+     font-size: 15px;
+     color: white;
+     margin-left: 12px;
+    }
+    #home {
+     text-align: center;
+     }
+   section {
+    background: linear-gradient(93.51deg, gray 2.84%, black 99.18%);
+    padding: 10px;
+    border-radius: 0 30px 0 30px;
+    margin: 10;
+    border: solid red;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  #my-section {
+    background: linear-gradient(93.51deg, black 2.84%, gray 99.18%);
+    padding: 10px;
+    border-radius: 0px;
+    border: none;
+    margin: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+.navbar .hamburgerlogowrap {
+  display: flex;
+  align-items: center;
+}
+.navbar .hamburger {
+  display: none;
+  color: #D7D7D7;
+  background-color: #1F1D2B;
+  border: none;
+  margin-right: 10px;
+}
+.navbar .createbtn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  width: 126px;
+  height: 45px;
+  color: #BCBCBC;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+}
+.navbar .createbtn.selectedbtn {
+  border: 1px solid #D7D7D7;
+  border-radius: 10px;
+}
+.navbar .navlogo {
+  height: 100%;
+  background: linear-gradient(93.51deg, #9B51E0 2.84%, #3081ED 99.18%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+}
+.navbar .navlink {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  color: #BCBCBC;
+}
+.navbar .navlink.selectedlink {
+  background: linear-gradient(93.51deg, #9B51E0 2.84%, #3081ED 99.18%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: 1.5px solid #9B51E0;
+}
+.navbar .navlink:not(:last-child) {
+  margin-right: 32px;
+}
+.top-nav {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #151922;
+  background: linear-gradient(to left, #151922, #6C5DD3);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #045454;
+  height: 30px;
+  padding: 1em;
+z-index: 999; /* set a high z-index value */
+}
+.logo-container img {
+  width: 45px;
+  height: 45px;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container h2 {
+  margin-left: 10px;
+  font-size: 20px;
+}
+.menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu > li {
+  margin: 0 1rem;
+  overflow: hidden;
+}
+
+.menu-button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: red;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+
+.menu-button::before {
+  content: '';
+  margin-top: -8px;
+}
+
+.menu-button::after {
+  content: '';
+  margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+
+@media (max-width: 700px) {
+  .menu-button-container {
+    display: flex;
+  }
+  .menu {
+    position: absolute;
+    top: 0;
+    margin-top: 50px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  #menu-toggle ~ .menu li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  #menu-toggle:checked ~ .menu li {
+    border: 1px solid #333;
+    height: 2.5em;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .menu > li {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    color: white;
+    background-color: #222;
+  }
+  .menu > li:not(:last-child) {
+    border-bottom: 1px solid #444;
+  }
+}
+.image-style {
+  animation: floating 3s ease-in-out infinite;
+  display: flex; /* Use flexbox for centering */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  text-align: center; /* Center text if needed */
+}
+
+.image-style img {
+  max-width: 100%; /* Ensure the image doesn't exceed its container */
+  max-height: 100%; /* Ensure the image doesn't exceed its container */
+  object-fit: contain; /* Adjust the object-fit property as per your needs */
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.image-style {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+
+@keyframes floating {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+.pogi-criptotradeir {
+font-family: Arial,Sans-Serif;
+  font-size: 24px;
+  color: black;
+  text-align: center;
+}
+ .social-icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 10px;
+    }
+    .social-icons img {
+      height: 50px;
+      width: auto;
+      margin: 0 2px;
+      border: solid red;
+      border-radius: 50px;
+    }
+    .social-icons a {
+      filter: brightness(100%);
+      transition: all 0.2s ease-in-out;
+    }
+    .social-icons a:hover {
+      filter: brightness(150%);
+      transform: scale(1.1);
+    }
+    .social-icons a:hover img {
+      filter: invert(100%) brightness(100%);
+    }
+  .button {
+    border: 2px solid #6C5DD3; /* add border to button */
+    padding: 0px; /* add padding to button */
+    border-radius: 40px; /* add border radius to button */
+    filter: brightness(100%);
+    transition: all 0.2s ease-in-out;
+    overflow: hidden;
+  }
+
+  .button:hover {
+    filter: brightness(150%);
+    transform: scale(1.1);
+  }
+
+  .button:hover img {
+    filter: invert(100%) brightness(100%);
+  }
+  .footer-main {
+    font-size: 20px;
+    line-height: 30px;
+    max-width: 100%;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  .footer-navigate {
+    justify-content: space-between;
+    width: 100%;
+  }
+  .footer-navigate .nav {
+    margin-left: 20px;
+  }
+  .footer-navigate .nav h5 {
+    font-size: 15px;
+    line-height: 30px;
+  }
+  .footer-navigate .nav p {
+    font-size: 10px;
+    line-height: 18px;
+  }
+.footer-main {
+  max-width: 40%;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 40px;
+  color: #FFFFFF;
+}
+.footer-navigate {
+  display: flex;
+}
+.footer-navigate .nav {
+  margin-left: 60px;
+}
+.footer-navigate .nav h5 {
+  margin: 0;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #FFFFFF;
+}
+.footer-navigate .nav p {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.03em;
+  color: #D7D7D7;
+}
+
+.footer2 p {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 36px;
+  color: #828282;
+}
+.partners {
+    display: inline-block;
+    position: relative;
+    margin: -10px;
+}
+
+.partners a {
+    display: block;
+}
+
+.partners img {
+    width: 150px;
+    height: auto;
+}
+
+.partners .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.partners:hover .overlay {
+    opacity: 1;
+}
+a {
+    color: red;
+  }
+  .glow-border {
+    border: 1px solid #6C5DD3;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 0 50px #3a005e, 0 0 50px #000000, 0 0 50px #3a005e, 0 0 50px #000000, 0 0 50px #000000, 0 0 50px #000000, 0 0 50px #3a005e, 0 0 50px #000000;
+    animation: glow 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 2px #3a005e, 0 0 2px #3a005e, 0 0 2px #3a005e, 0 0 2px #3a005e, 0 0 2px #3a005e, 0 0 2px #3a005e, 0 0 2px #3a005e, 0 0 2px #3a005e;
+    }
+    to {
+      box-shadow: 0 0 2px #6C5DD3, 0 0 2px #6C5DD3, 0 0 2px #6C5DD3, 0 0 2px #6C5DD3, 0 0 2px #6C5DD3, 0 0 2px #6C5DD3, 0 0 2px #6C5DD3, 0 0 2px #6C5DD3;
+    }
+  }
+.slide-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.slide-up.slide-up-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.landingpage {
+  margin: 0 auto;
+  padding: 0 15px;
+  position: relative;
+  max-width: 1100px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #1F1D2B;
+  border-radius: 0 20px 0 20px;
+  border: solid red;
+}
+.image-container {
+  text-align: center;
+  justify-content: center;
+}
+
+.image-container .image-wrapper {
+  
+  padding: 2px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+
+  border: 2px solid red;
+  border-radius: 0 30px 0 30px;
+  background-color: silver;
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .image-container img {
+    max-width: 50%;
+  }
+}
+
+
+#top-navbar {
+  background: linear-gradient(45deg, black, #1F1D2B);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 5px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  border: none;
+  
+}
+
+#top-navbar .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 50%;
+  font-size: 24px;
+  color: red;
+  text-decoration: none;
+  transition: transform 0.3s;
+}
+
+#top-navbar .btn:hover {
+  transform: scale(1.1); /* Adjust the scale factor as desired */
+}
+
+    #top-navbar .btn i {
+      margin-left: 2px;
+    }
+
+    #hamburger-navbar {
+      background: linear-gradient(to right, #1F1D2B, black);
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 10px;
+    }
+
+    #hamburger-navbar img {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    #hamburger-navbar .hamburger-menu {
+      display: none;
+      position: absolute;
+      top: 70px;
+      right: 10px;
+      background: linear-gradient(to right, #1F1D2B, black);
+      padding: 10px;
+    }
+
+    #hamburger-navbar .hamburger-menu a {
+      display: block;
+      color: white;
+      margin-bottom: 5px;
+    }
+
+    @media (max-width: 767px) {
+      img {
+        width: 100%;
+      }
+    }
+
+    @media (min-width: 768px) {
+      img {
+        width: 40%;
+      }
+    }
+
+.slide-from-left {
+  opacity: 0; /* Initially hide the element */
+  transform: translateX(-100px); /* Initially position the element outside the viewport */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Add transition for smooth effect */
+}
+
+
+    /* CSS for the roadmap container */
+    .roadmaps {
+      position: relative;
+      width: 100%;
+      max-width: 800px; /* Adjust the width as per your needs */
+      margin: 0 auto;
+      padding: 40px 20px;
+      height: 600px; /* Set a fixed height for the roadmap container */
+      overflow-y: scroll; /* Add vertical scrollbar to the roadmap container */
+    }
+
+/* CSS for the road line */
+.roadmap-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 30px; /* Adjust the left position as per your needs */
+  width: 2px;
+  background-color: red; /* Set the color of the road line to red */
+  animation: moveLine 14s infinite; /* Adjust the animation duration as per your needs */
+}
+
+/* Media query for desktop */
+@media (min-width: 768px) {
+  .roadmap-line {
+    left: 190px; /* Set the left position to 190px on desktop */
+  }
+}
+
+    /* CSS for the circle on the road line */
+    .roadmap-circle {
+      position: absolute;
+      top: 0;
+      left: -5px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: red; /* Set the color of the circle to red */
+      transform: translateY(-50%);
+    }
+
+    /* CSS for the road plans */
+    .roadmap-phase {
+      position: relative;
+      margin-bottom: 40px;
+      padding-left: 60px; /* Adjust the padding as per your needs */
+    }
+
+/* CSS for the scrolling section */
+.scrolling-section {
+  max-height: 200px; /* Adjust the max-height as per your needs */
+  padding-right: 20px; /* Add padding to avoid content overlapping with scrollbar */
+  background-color: none; /* Add a gray background color to the content box */
+  border-radius: 0 35px 0 30px;
+  overflow-y: scroll; /* Add vertical scrollbar to the scrolling section */
+  margin-right: 40px;
+}
+
+/* Media query for mobile */
+@media (max-width: 767px) {
+  .scrolling-section {
+    border: 1px solid red; /* Add a border to the scrolling section */
+    width: 87%; /* Set the width to 100% of the viewport */
+    margin-right: 0px; /* Remove the right margin */
+  }
+}
+
+/* Media query for desktop */
+@media (min-width: 768px) {
+  .scrolling-section {
+    border: 1px solid red; /* Add a border to the scrolling section */
+    width: 40%; /* Set the width to 40% of the viewport */
+    margin-right: 20px; /* Add the right margin for desktop */
+    margin-left: 200px;
+  }
+}
+
+    /* CSS animation for the road line */
+    @keyframes moveLine {
+      0% {
+        top: 0;
+      }
+      20% {
+        top: 0;
+      }
+      35% {
+        top: 100px;
+      }
+      50% {
+        top: 240px;
+      }
+      65% {
+        top: 380px;
+      }
+      80% {
+        top: 520px;
+      }
+      100% {
+        top: 660px;
+      }
+    }
+#roadmapz {
+  font-size: 30px;
+  justify-content: center;
+  text-align: center;
+}
+#home {
+  text-align: center;
+}
+#about {
+  text-align: none;
+}
+#token {
+  text-align: none;
+}
+
+#loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #1F1D2B;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    
+    #loading img {
+      width: 100px; /* Adjust the size as needed */
+      height: auto;
+    }
+
+.slide-exit-animation {
+  transition: transform 0.5s ease-out; /* Customize the duration and easing as needed */
+}
+
+.slide-exit-animation.slide-exit {
+  transform: translateX(-100%); /* Customize the direction and distance of the slide exit */
+}
+
+.slide-exit-animation {
+  transition: transform 0.5s ease-out; /* Customize the duration and easing as needed */
+}
+
+#loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#logo-container {
+  position: relative;
+  margin-bottom: 10px; /* Adjust the spacing between the logo and the loading bar as needed */
+}
+
+#logo {
+  width: 100px; /* Adjust the size of the logo image as needed */
+  height: 100px;
+}
+/* Define the bouncing animation */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Apply the animation to the logo */
+        #logo {
+            animation: bounce 1s infinite;
+        }
+
+
+#loading-bar {
+  width: 0;
+  height: 10px; /* Adjust the height of the loading bar as needed */
+  background-color: red; /* Customize the color of the loading bar */
+  animation: loading-animation 20s linear infinite; /* Customize the animation duration and timing as needed */
+}
+
+@keyframes loading-animation {
+  0% {
+    width: 0;
+  }
+  30% {
+    width: 30%;
+  }
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.image-container {
+  flex: 1 0 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.text-container {
+  flex: 1 0 100%;
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .image-container {
+    order: 2;
+    flex: 0 0 50%;
+  }
+
+  .text-container {
+    order: 1;
+    flex: 0 0 50%;
+  }
+
+  .cube {
+    right: 0; /* Position on the right side on desktop */
+  }
+}
+
+@media (max-width: 767px) {
+  .cube {
+    left: 0; /* Position on the left side on mobile */
+  }
+}
+
+.cube {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: #ff0000;
+  animation: moveCube 15s infinite linear;
+  z-index: 1;
+}
+
+@keyframes moveCube {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+/*DITO ANG CUBE ANIMATION 2*/
+
+.image-container2 .image-wrapper2 {
+  
+  padding: 2px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.image-container2 img {
+  max-width: 100%;
+  height: auto;
+
+  border: 2px solid red;
+  border-radius: 0 30px 0 30px;
+  background-color: silver;
+  text-align: center;
+}
+
+
+.container2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Add this line to center the content horizontally */
+  align-items: center; /* Add this line to center the content vertically */
+  position: relative;
+}
+
+.image-container2 {
+  flex: 1 0 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.text-container2 {
+  flex: 1 0 100%;
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .image-container2 {
+    order: 2;
+    flex: 0 0 70%;
+  }
+
+  .text-container2 {
+    order: 1;
+    flex: 0 0 50%;
+  }
+}
+
+
+    @media (max-width: 767px) {
+      .cube2 {
+        left: 0; /* Position on the left side on mobile */
+        right: auto; /* Reset right position */
+        transform: translateX(0); /* Reset horizontal translation */
+      }
+    }
+
+    @media (min-width: 768px) {
+      .cube2 {
+        left: 50%; /* Position in the center on desktop */
+        right: auto; /* Reset right position */
+        transform: translateX(-50%); /* Center horizontally */
+      }
+    }
+
+    .cube2 {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background-color: #ff0000;
+      animation: moveCube 23s infinite linear;
+      z-index: 1;
+    }
+
+    @keyframes moveCube {
+      0% {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+      }
+      100% {
+        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+      }
+    }
+/*BUY BUTTON NI LUPI*/
+.button-ni-lupi {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  background-color: transparent;
+  border: 2px solid red;
+  color: red;
+  transition: all 0.3s ease;
+  margin-bottom: 30px;
+  margin-top: 0;
+  margin-left: 10px;
+  border-radius: 0 30px 5px 20px;
+}
+
+.button-ni-lupi:hover {
+  transform: scale(1.1);
+  color: white;
+  border-color: white;
+}
+
+.chart-ni-lupi {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  background-color: transparent;
+  border: 2px solid red;
+  color: red;
+  transition: all 0.3s ease;
+  margin-bottom: 5px;
+  margin-left: 15px;
+  border-radius: 30px 5px 20px 0;
+}
+
+.chart-ni-lupi:hover {
+  transform: scale(1.1);
+  color: white;
+  border-color: white;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/*END*/
+
+/*DITO ANG TOKENNOMICS CSS*/
+
+.container-tokenomics {
+      display: inline-block;
+      text-align: center;
+      justify-content: center;
+    }
+     .logo-token {
+      width: 100px;
+     }
+    .title-token {
+      font-weight: none;
+      color: red;
+    }
+   .group-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .group {
+      flex: 1 0 50%;
+    }
+    .description {
+      text-align: center;
+      font-weight: bold;
+      font-size: 20px;
+    }
+    .p-token{
+     text-align: center;
+     font-size: 15px;
+     color: white;
+     margin-top: 1px;
+    }
+    .p-token2{
+     text-align: center;
+     font-size: 15px;
+     color: orange;
+     margin-top: 5px;
+     
+    }
+/*END*/
+.btn-square i {
+            border: 1px solid red;
+            padding: 5px;
+            border-radius: 50%;
+        }
+
+
+  </style>
+</head>
+<body>
+<div id="loading" class="slide-exit-animation">
+  <div id="logo-container">
+    <img src="lupilogo.png" alt="Your Logo" id="logo">
+  </div>
+  <div id="loading-bar"></div>
+</div>
+
+
+  
+  
+ <div id="home"></div>
+  <h1></h1>
+<section id="my-section" class="top-navbar">
+<div id="top-navbar">
+  <div class="btn btn-square rounded-circle me-1" onclick="handleDiscordClick()">
+    <i class="fab fa-discord"></i>
+  </div>
+  <div class="btn btn-square rounded-circle me-1" onclick="handleTelegramClick()">
+    <i class="fab fa-telegram"></i>
+  </div>
+  <div class="btn btn-square rounded-circle me-1" onclick="handleTwitterClick()">
+    <i class="fab fa-twitter"></i>
+  </div>
+</div>
+</section>
+<section id="my-section" class="top-nav">
+  <div>
+    <div class="logo-container">
+     <a href="#home"> <img src="lupilogo.png" alt="Your Logo"></a>
+      <h5>Lupirium</h5>
+    </div>
+  </div>
+  <input id="menu-toggle" type="checkbox" />
+  <label class='menu-button-container' for="menu-toggle">
+    <div class='menu-button'></div>
+  </label>
+  <ul class="menu">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#token">Token</a></li>
+    <li><a href="#roadmapz">Roadmap</a></li>
+    <li><a href="#home" onclick="myFunction()">Litepaper</a></li>
+    <li><a href="#about" onclick="myFunction()">About</a></li>
+  </ul>
+</section>
+<h1>🔻</h1>
+<h1></h1>
+<h1></h1>
+
+<div class="landingpage">
+<h1></h1>
+
+<div class="container">
+  <div class="image-container">
+    <div class="image-wrapper">
+      <img src="wolf.jpg" width="100%" height="auto" class="slide-up">
+    </div>
+  </div>
+  <div class="text-container">
+    <h1></h1>
+    <h5 class="slide-up">"Lupirium (LUPI)
+       The Wild Meme Coin with 
+    50 Million Supply</h5>
+  </div>
+  <div class="cube"></div>
+</div>
+
+<!--BUTTONS NG BUY AT CHART NI LUPI-->
+<div class="button-container">
+<a href="#" class="button-ni-lupi" onclick="chartLupi()">Chart</a>
+</div>
+<div class="button-container">
+<a href="#" class="button-ni-lupi" onclick="buyLupi()">Buy LUPI</a>
+</div>
+
+  <script src="script.js"></script>
+  
+<!--END NG BUTTONS NI LUPI-->
+
+  <section id="home" class="slide-up">
+  <h6>WHAT IS LUPI?</h6>
+
+  <div class="roadmap">
+    <div class="phase">
+      <h2 class="title">Decentralized</h2>
+      <ul>
+        <li class="task">LUPI is for everyone! </li>
+        <li class="task">LUPI is a Meme Coin! </li>
+        <li class="task">A Meme Coin with only 50M supply</li>
+        <li class="task">Contract is Renounced. </li>
+        <li class="task">LP is burned forever</li>
+        <li class="task">No Tax </li>
+      </ul>
+    </div>
+
+    <div class="phase">
+      <h2 class="title">Security</h2>
+      <ul>
+        <li class="task">Launch on BSC</li>
+        <li class="task">Immutable Contract</li>
+        <li class="task">No trust issue</li>
+        <li class="task">Transparent</li>
+      </ul>
+    </div>
+
+    <div class="phase">
+      <h2 class="title">Team Details</h2>
+      <ul>
+        <li class="task">Team is anonymous</li>
+        <li class="task">Don't need to trust the team!</li>
+        <li class="task">LUPI's code will never lie!</li>
+
+      </ul>
+    </div>
+    
+    <div class="phase">
+      <h2 class="title">Attention!</h2>
+      <ul>
+        <li class="task">LUPI is not an Investment!</li>
+         <li class="task">LUPI is designed solely for entertainment!</li>
+        <li class="task">LUPI has no usecase or utility!</li>
+        <li class="task">LUPI is transparent</li>
+        <li class="task">Always DYOR!</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<h1></h1>
+<h1></h1>
+<div class="container2">
+  <div class="image-container2">
+    <div class="image-wrapper2">
+      <img src="lupigift.gif" width="100%" height="auto" class="slide-up">
+    </div>
+  </div>
+  <div class="cube2"></div>
+</div>
+
+<h3 class="slide-up">
+  The name "Lupirium" was created by blending the majestic qualities of wolves ("lupus") with the allure of precious metals like platinum ("irium").</h3>
+<h3 class="slide-up">
+  This unique combination embodies strength, rarity, and a captivating animalistic charm.
+</h3>
+
+<h3 class="slide-up">
+LUPI, with its inherent transparency and decentralized nature, transcends the confines of taxes and unnecessary complications.</h3>
+<h3 class="slide-up">
+Just like wolves in the wild, it patiently awaits individuals who are drawn to its untamed essence, offering a seamless and unburdened journey. </h3>
+
+
+<!-- DITO ANG TOKENOMICS -->
+<div id="token"></div>
+  <div class="container-tokenomics">
+    <h5>LUPI Token</h5>
+    <p class="p-token">$LUPI: The untamed meme coin, like a wild wolf in the forest. No owner, no taxes. Contract renounced and LP tokens burned for transparency and security. Embrace the wild side of crypto with $LUPI!</p>
+    <div class="image-style">
+    <img class="logo-token" src="lupilogo.png" alt="LUPI Logo"></div>
+    
+    <div class="group-container">
+      <div class="group">
+        <div class="title-token">Chain</div>
+        <div class="description">BSC</div>
+      </div>
+      <div class="group">
+        <div class="title-token">Token</div>
+         <div class="description">LUPI</div>
+      </div>
+      <div class="group">
+        <div class="title-token">Tax</div>
+        <div class="description">None</div>
+      </div>
+      <div class="group">
+        <div class="title-token">SUPPLY</div>
+        <div class="description">50,000,000</div>
+      </div>
+      <div class="group">
+        <div class="title-token">Lquidity</div>
+        <div class="description">Burned LP Tokens</div>
+      </div>
+      <div class="group">
+        <div class="title-token">Contract</div>
+        <div class="description">Renounced</div>
+      </div>
+    </div>
+    
+    <p class="p-token2">Contract Address: COMING SOON</p>
+  </div>
+<!-- END -->
+
+<h5>Latest News</h5>
+<div class="twitter-feed-container" style="height: 350px; width: 300px; overflow: auto; margin-left: auto; margin-right: auto;">
+  <div class="sk-ww-twitter-feed" data-embed-id="165162"></div>
+</div>
+<script src="https://widgets.sociablekit.com/twitter-feed/widget.js" async defer></script>
+
+
+
+
+<div id="about"></div>
+<h5 class="slide-up">About LUPI</h5>
+<p class="slide-up">
+LUPI is a Decentralized Wolf Coin</p>
+<p class="slide-up">
+LUPI was created with a sole purpose - to bring fun and excitement to the world of cryptocurrencies.</p>
+<p class="slide-up">
+Unlike other meme coins, LUPI has no specific owner. It belongs to a vibrant community, much like a pack of wolves in the untamed forest, where nobody lays claim to their wild spirit.</p>
+<p class="slide-up">
+In its essence, LUPI is a decentralized and immutable meme coin, built on the principles of blockchain technology.</p>
+<p class="slide-up">
+It embraces the spirit of independence and resilience, just like a wolf patiently waiting for its time to shine.</p>
+<p class="slide-up">
+In the vast landscape of the cryptocurrency market, there is an abundance of dog coins, cat coins, and even frog coins.</p>
+<p class="slide-up">
+However, LUPI stands apart, representing the untamed strength and majesty of the wolf. </p>
+<p class="slide-up">
+It aspires to claim its rightful place, waiting for the day when it achieves widespread adoption and recognition.</p>
+<p class="slide-up">
+Just as a wolf rises to its throne as the apex predator, LUPI aims to captivate the hearts and minds of crypto enthusiasts, creating a lasting impact within the crypto ecosystem.</p>
+<p class="slide-up">
+With its dedicated community, LUPI is poised to revolutionize the meme coin space, proving that wolves can indeed reign supreme.
+</p>
+
+<h5 class="slide-up">About Team</h5>
+<p class="slide-up">Lupirium is a community-driven and decentralized token, operated by an anonymous team.</p>
+<p class="slide-up">
+We believe that the true power lies in the collective efforts of our community, making the identity of the creators irrelevant.</p>
+<p class="slide-up">
+To ensure transparency and trust, the contract has been renounced, and the LP Tokens will be burned forever.</p>
+<p class="slide-up">
+While our team remains dedicated to managing and supporting LUPI, our ultimate goal is to achieve remarkable success through widespread adoption and make our dream a reality.</p>
+<p class="slide-up">
+In the world of crypto,You don't have to trust developers and creators instead trust yourself and embrace decentralization and transparency. LUPI values individual decision-making and the core principles of the industry.
+</p>
+<div class="text-align center">
+      <img src="https://raw.githubusercontent.com/Onchainsperm/onchain/main/shpvf0bke008rvno1kvpto8bhi-75cfd99eb8ecaef8a24ac82e744dbca3.png" width="100%" height="auto" class="image-style">
+</div>
+<div id="roadmapz"></div>
+<div class="slideFromLeft">
+  <h5>Our Roadmap</h5>
+  <div class="roadmaps">
+    <div class="roadmap-line">
+      <div class="roadmap-circle"></div>
+    </div>
+    <div class="roadmap-phase">
+      <h3>Phase 1</h3>
+      <div class="scrolling-section">
+        <p class="p2">Creating Social Media (✔️)</p>
+        <p class="p2">Community Building</p>
+        <p class="p2">Launch LUPI Token</p>
+      </div>
+    </div>
+    <div class="roadmap-phase">
+      <h3>Phase 2</h3>
+      <div class="scrolling-section">
+        <p class="p2">Marketing</p>
+        <p class="p2">10,000 Followers on Twitter</p>
+        <p class="p2">10,000 Members on Telegram</p>
+        <p class="p2">10,000 Members on Discord</p>
+      </div>
+    </div>
+    <div class="roadmap-phase">
+      <h3>Phase 3</h3>
+      <div class="scrolling-section">
+        <p class="p2">Collaboration and Partnership</p>
+        <p class="p2">Mass Adoption</p>
+        <p class="p2">Staking and Utilities</p>
+      </div>
+    </div>
+    <div class="roadmap-phase">
+      <h3>Phase 4</h3>
+      <div class="scrolling-section">
+        <p class="p2">CEX Listings</p>
+        <p class="p2">NFTs and NFT Staking</p>
+        <p class="p2">Expansion to other chains</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<h1 class="slide-up">⚠️</h1>
+<h1 class="slide-up">Cryptocurrency may be unregulated in your jurisdiction.</h1>
+<h1 class="slide-up">
+The value of cryptocurrencies may go down as well as up.</h1>
+<h1 class="slide-up">
+Profits may be subject to capital gains or other taxes applicable in your jurisdiction.</h1>
+	<h5 class="slide-up">Automated Smart Contract Audit
+	</h5>
+<div style="text-align:center;">
+<div class="partners">
+    <a href="https://www.cyberscope.io">
+        <img src="https://raw.githubusercontent.com/onchain123/onchain/main/cyberscope.jpg" alt="your image description" class="glow-border">
+        <div class="overlay">
+        </div>
+    </a>
+</div>
+</div>
+
+	<h5 class="slide-up">Echosystem
+	</h5>
+<div style="text-align:center;">
+<div class="partners">
+    <a href="./">
+        <img src="https://raw.githubusercontent.com/onchain123/onchain/main/2560px-Binance_logo.svg.png" alt="your image description" class="glow-border">
+        <div class="overlay">
+        </div>
+    </a>
+</div>
+<p>
+  
+</p>
+<div class="partners">
+    <a href="./">
+        <img src="https://raw.githubusercontent.com/Onchainsperm/onchain/main/logo.png" alt="your image description" class="glow-border">
+        <div class="overlay">
+        </div>
+    </a>
+</div>
+<p>
+</p>
+<div class="partners">
+    <a href="./">
+        <img src="uniswaplogo.png" alt="your image description" class="glow-border">
+        <div class="overlay">
+        </div>
+    </a>
+</div>
+</div>
+<div style="text-align:center;">
+<div class="social-icons">
+  
+  <a class="btn btn-square rounded-circle me-1" href="https://twitter.com/lupirium_lupi?t=nucblSZAG1tVOyvWW3_SSw&s=09"><i class="fab fa-twitter"></i></a>
+
+   <a class="btn btn-square rounded-circle me-1" href="./"><i class="fab fa-discord"></i></a>
+   <a class="btn btn-square rounded-circle me-1" href="https://t.me/LupiriumOfficial"><i class="fab fa-telegram"></i></a></a>
+</div>
+</div>
+
+<h1></h1>
+</div>
+
+
+    <!--   START NG JAVA SCRIPT DITO   -->
+
+
+
+<!--DITO SIMULA NG BUY BUTTON NI LUPI-->
+<script>
+function buyLupi() {
+  // BISAYA LANG SAKALAM MGA LODI
+  
+  window.location.href = "#home";
+}
+function chartLupi() {
+  // BISAYA LANG SAKALAM MGA LODI
+  
+  window.location.href = "#home";
+}
+</script>
+
+<!--END-->
+
+<script>
+    setTimeout(function() {
+  var loadingElement = document.getElementById('loading');
+  loadingElement.classList.add('slide-exit');
+  
+  setTimeout(function() {
+    loadingElement.style.display = 'none';
+  }, 500); // Wait for the animation duration before hiding the element (adjust the delay if needed)
+}, 6000);
+
+  </script>
+
+
+<script>
+function slideFromLeft(element) {
+  const elementPosition = element.getBoundingClientRect().top;
+  const screenHeight = window.innerHeight;
+
+  if (elementPosition < screenHeight) {
+    element.style.opacity = 1;
+    element.style.transform = "translateX(0)";
+  }
+}
+
+window.addEventListener("scroll", function() {
+  const element = document.querySelector(".slide-from-left");
+  slideFromLeft(element);
+});
+
+</script>
+
+
+<script>
+  function handleTwitterClick() {
+    window.location.href = "https://twitter.com/lupirium_lupi?t=nucblSZAG1tVOyvWW3_SSw&s=09";
+  }
+
+
+  function handleDiscordClick() {
+    window.location.href = "./";
+  }
+
+  function handleTelegramClick() {
+    window.location.href = "https://t.me/LupiriumOfficial";
+  }
+  
+</script>
+
+
+
+  <script>
+    function handleLogoClick() {
+      // Handle logo click event
+      // Redirect or perform desired action
+      window.location.href = "./";
+    }
+
+    function handleHamburgerClick() {
+      // Handle hamburger click event
+      // Toggle menu or perform desired action
+      var menu = document.querySelector('.menu-items');
+      menu.style.transform = menu.style.transform === 'translateX(0)' ? 'translateX(-150%)' : 'translateX(0)';
+    }
+  </script>
+
+
+  <script>
+    function toggleHamburgerMenu() {
+      var menu = document.getElementById('hamburgerMenu');
+      menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+    }
+
+    window.addEventListener('scroll', function() {
+      var content = document.getElementById('content');
+      var distanceFromTop = window.pageYOffset || document.documentElement.scrollTop;
+      content.style.transform = 'translateY(' + distanceFromTop + 'px)';
+    });
+  </script>
+
+<script>
+function isElementInViewport(element) {
+  var rect = element.getBoundingClientRect();
+  var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+  var windowWidth = window.innerWidth || document.documentElement.clientWidth;
+
+  // Check if the element is within the viewport vertically and horizontally
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= windowHeight &&
+    rect.right <= windowWidth
+  );
+}
+
+function addSlideUpAnimation() {
+  var sectionElements = document.getElementsByClassName('slide-up');
+  for (var i = 0; i < sectionElements.length; i++) {
+    var sectionElement = sectionElements[i];
+    if (isElementInViewport(sectionElement)) {
+      sectionElement.classList.add('slide-up-active');
+    }
+  }
+}
+
+// Trigger the slide-up animation on page load
+document.addEventListener('DOMContentLoaded', function() {
+  addSlideUpAnimation();
+});
+
+// Trigger the slide-up animation on scroll
+window.addEventListener('scroll', function() {
+  addSlideUpAnimation();
+});
+
+// Trigger the slide-up animation on window resize
+window.addEventListener('resize', function() {
+  addSlideUpAnimation();
+});
+</script>
+
+  <script>
+    const roadmap = document.querySelector('.roadmap');
+    roadmap.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      roadmap.scrollLeft += e.deltaY;
+    });
+  </script>
+  <script src="script.js"></script> 
+  <script>
+const slides = document.querySelectorAll(".slides img");
+let currentIndex = 0;
+
+function showSlides() {
+  slides[currentIndex].classList.add("slide-hidden");
+  currentIndex = (currentIndex + 1) % slides.length;
+  slides[currentIndex].classList.remove("slide-hidden");
+}
+
+setInterval(showSlides, 1000); // Change image every 3 seconds (adjust as needed)
+
+  </script>
+<div style="display: flex; justify-content: center;">
+  <p style="font-size: 8px;" class="pogi-criptotradeir">⚠️DISCLAIMER: Lupirium (LUPI) is not a financial institution nor investment.Lupirium is a decentralized token owned by the community and run by the community..
+  Investing in crypto is very highrisk which can lead to losses. invest at your own risk! </p>
+  </div>
+<div style="display: flex; justify-content: center;">
+  <p style="font-size: 8px;" class="pogi-criptotradeir">&copy; 2023 Lupirium. All rights reserved.</p>
+  </div>
+  
+<!-- DITO AND FLOAGING SUPPORT SA BOTTOM RIGHTSIDE NG PAGE  -->
+<div style="position: fixed; bottom: 20px; right: 20px; z-index: 998;">
+  <div style="display: flex; align-items: center;">
+    <div id="notificationContainer" style="width: 180px; padding: 10px; background-color: #1F1D2B; border: 2px solid red; border-radius: 20px 0 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+        <p id="notificationText" style="margin: 0; color: red;">Email us for business inquiries and support.</p>
+        <button onclick="closeNotification()" style="background: none; border: none; font-size: 20px; cursor: pointer; color: orange;">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+    <div>
+      <a href="mailto:lupiriumx@gmail.com">
+        <button style="width: 60px; height: 60px; border-radius: 50%; background-color: red; color: white; font-size: 20px;">
+          <i class="fas fa-envelope"></i>
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  function closeNotification() {
+    var notificationContainer = document.getElementById("notificationContainer");
+    notificationContainer.style.display = "none";
+  }
+</script>
+<!--END NG FLOATING BUTTON-->
+
+</body>
+</html>

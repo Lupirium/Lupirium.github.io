@@ -44,8 +44,8 @@
     }
     h1{
      text-align: left;
-     font-size: 25px;
-     color: orange;
+     font-size: 20px;
+     color: #B90E0A;
     }
     h2{
      text-align: center;
@@ -55,7 +55,7 @@
     h3{
      text-align: left;
      font-size: 16px;
-     color: red;
+     color: gray;
     }
     h4{
      text-align: center;
@@ -66,7 +66,7 @@
     font-family: Reggae One;
      text-align: center;
      font-size: 30px;
-     color: red;
+     color: #B90E0A;
      margin-left: 5px;
     }
    h6{
@@ -91,19 +91,20 @@
      text-align: center;
      }
    section {
-    background: linear-gradient(93.51deg, gray 2.84%, black 99.18%);
+    background: linear-gradient(93.51deg, #1F1D2B 2.84%, #1F1D2B 99.18%);
     padding: 10px;
-    border-radius: 0 30px 0 30px;
+    border-radius: 30px;
     margin: 10;
-    border: solid red;
+    
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
   #my-section {
-    background: linear-gradient(93.51deg, black 2.84%, gray 99.18%);
+    background: linear-gradient(93.51deg, black 2.84%, black 99.18%);
     padding: 10px;
     border-radius: 0px;
     border: none;
     margin: 10;
+    margin-top: 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
     
@@ -169,8 +170,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: #151922;
-  background: linear-gradient(to left, #151922, #6C5DD3);
+  background-color: black;
+  background: linear-gradient(to left, black, black);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: #045454;
   height: 30px;
@@ -287,7 +288,7 @@ cursor: none;
     padding: 0.5em 0;
     width: 100%;
     color: white;
-    background-color: #1F1D2B;
+    background-color: black;
   }
   .menu > li:not(:last-child) {
     border-bottom: 1px solid #444;
@@ -507,9 +508,8 @@ a {
   max-width: 1100px;
   overflow-y: auto;
   overflow-x: hidden;
-  background-color: #1F1D2B;
-  border-radius: 0 20px 0 20px;
-  border: solid red;
+  background-color: black;
+  
 }
 .image-container {
   text-align: center;
@@ -526,23 +526,22 @@ a {
 .image-container img {
   max-width: 100%;
   height: auto;
-
-  border: 2px solid red;
-  border-radius: 0 30px 0 30px;
+  border-radius: 30px;
   background-color: silver;
   text-align: center;
 }
 
 @media only screen and (min-width: 768px) {
   .image-container img {
-    max-width: 50%;
+    max-width: 100%;
   }
 }
 
 
 #top-navbar {
-  background: linear-gradient(45deg, black, #1F1D2B);
+  background: linear-gradient(45deg, #4E0707, black);
   display: flex;
+  margin-bottom: 0;
   align-items: center;
   justify-content: flex-end;
   padding: 5px;
@@ -832,6 +831,8 @@ a {
   flex: 1 0 100%;
   position: relative;
   z-index: 2;
+  margin-top: 30px;
+  
 }
 
 .text-container {
@@ -866,7 +867,7 @@ a {
   position: absolute;
   width: 200px;
   height: 200px;
-  background-color: #ff0000;
+  background-color: gray;
   animation: moveCube 15s infinite linear;
   z-index: 1;
 }
@@ -974,9 +975,9 @@ a {
   font-weight: bold;
   text-align: center;
   text-decoration: none;
-  background-color: transparent;
-  border: 2px solid red;
-  color: red;
+  background-color: gray;
+  border: 1px solid #1F1D2B;
+  color: #1F1D2B;
   transition: all 0.3s ease;
   margin-bottom: 30px;
   margin-top: 0;
@@ -1088,10 +1089,29 @@ a {
     transition: 0.5s;
     position: relative;
     width: 310px;
-    color: red;
+    color: orange;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 17px;
   }
+/* Mobile styles */
+   @media (max-width: 767px) {
+  .question {
+    width: 300px;
+    margin: 2px;
+    border: 2px solid gray;
+  }
+}
+
+/* Desktop styles */
+   @media (min-width: 768px) {
+  .question {
+    width: 600px;
+    margin: auto;
+    border: 2px solid gray; /* Neon green border for desktop */
+    margin: 2px;
+  }
+}
+
 
   .question:hover {
     background-color: #1F1D2B;
@@ -1154,6 +1174,20 @@ a {
 
 /* END  */
 
+
+#divbg2 {
+  background-color: #26282A;
+ padding-top: 20px; /* Adjust the top padding as needed */
+  padding-bottom: 20px; 
+  border-radius: 15px;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 100%;
+  height: auto; /* Adjust the height as needed */
+}
+
+
+
   </style>
 </head>
 <body>
@@ -1211,7 +1245,7 @@ a {
 <div class="container">
   <div class="image-container">
     <div class="image-wrapper">
-      <img src="lupigifts.gif" width="100%" height="auto" class="slide-up">
+ <video src="video.mp4" width="100%" height="auto" autoplay controls controlsList="nodownload" class="slide-up"></video>
     </div>
   </div>
   <div class="text-container">
@@ -1249,7 +1283,7 @@ a {
         <li class="task">A Meme Coin with only 50M supply</li>
         <li class="task">Contract is Renounced. </li>
         <li class="task">LP is burned forever</li>
-        <li class="task">No Tax </li>
+        <li class="task">3% Tax for every transaction </li>
       </ul>
     </div>
 
@@ -1287,15 +1321,7 @@ a {
 </section>
 <h1></h1>
 <h1></h1>
-<div class="container2">
-  <div class="image-container2">
-    <div class="image-wrapper2">
-      <img src="lupigift.gif" width="100%" height="auto" class="slide-up">
-    </div>
-  </div>
-  <div class="cube2"></div>
-</div>
-
+<div id="divbg2">
 <h3 class="slide-up">
   The name "Lupirium" was created by blending the majestic qualities of wolves ("lupus") with the allure of precious metals like platinum ("irium").</h3>
 <h3 class="slide-up">
@@ -1309,6 +1335,7 @@ Just like wolves in the wild, it patiently awaits individuals who are drawn to i
 
 
 <!-- DITO ANG TOKENOMICS -->
+
 <div id="token"></div>
   <div class="container-tokenomics">
     <h5 class="slide-up">LUPI Token</h5>
@@ -1343,7 +1370,8 @@ Just like wolves in the wild, it patiently awaits individuals who are drawn to i
         <div class="description">Renounced</div>
       </div>
     </div>
-    
+    <p class="p-token2">3% Tax for every transaction</p>
+    <p></p>
     <p class="p-token2">Contract Address: COMING SOON</p>
   </div>
 <!-- END -->
@@ -1353,9 +1381,10 @@ Just like wolves in the wild, it patiently awaits individuals who are drawn to i
         <canvas width="200" height="200"></canvas>
         <div id="details"></div>
     </div></div>
-
+</div>
+<div id="divbg2">
 <h5 class="slide-up">Latest News</h5>
-<div class="twitter-feed-container" style="height: 350px; width: 300px; overflow: auto; margin-left: auto; margin-right: auto;">
+<div class="twitter-feed-container" style="height: 350px; width: 100%; overflow: auto; margin-left: auto; margin-right: auto;">
   <div class="sk-ww-twitter-feed" data-embed-id="165162"></div>
 </div>
 <script src="https://widgets.sociablekit.com/twitter-feed/widget.js" async defer></script>
@@ -1386,7 +1415,8 @@ Just as a wolf rises to its throne as the apex predator, LUPI aims to captivate 
 <p class="slide-up">
 With its dedicated community, LUPI is poised to revolutionize the meme coin space, proving that wolves can indeed reign supreme.
 </p>
-
+</div>
+<div id="divbg2">
 <h5 class="slide-up">About Team</h5>
 <p class="slide-up">Lupirium is a community-driven and decentralized token, operated by an anonymous team.</p>
 <p class="slide-up">
@@ -1401,6 +1431,7 @@ In the world of crypto,You don't have to trust developers and creators instead t
 <div class="text-align center">
       <img src="https://raw.githubusercontent.com/Onchainsperm/onchain/main/shpvf0bke008rvno1kvpto8bhi-75cfd99eb8ecaef8a24ac82e744dbca3.png" width="100%" height="auto" class="image-style">
 </div>
+</div>
 <div id="roadmapz"></div>
 <div class="slideFromLeft">
   <h5 class="slide-up">Our Roadmap</h5>
@@ -1414,6 +1445,7 @@ In the world of crypto,You don't have to trust developers and creators instead t
         <p class="p2">Creating Social Media (✔️)</p>
         <p class="p2">Community Building</p>
         <p class="p2">Launch LUPI Token</p>
+        <p class="p2">Presale</p>
       </div>
     </div>
     <div class="roadmap-phase">
@@ -1543,9 +1575,9 @@ Profits may be subject to capital gains or other taxes applicable in your jurisd
         let ctx = document.querySelector("canvas").getContext("2d");
 
         const results = [
-            {mood: "Liquidity Pool", total: 47500000, shade: "red"},
-            {mood: "Team token", total: 2500000, shade: "orange"},
-            
+            {mood: "Liquidity Pool", total: 37500000, shade: "pink"},
+            {mood: "Presale", total: 10000000, shade: "orange"},
+            {mood: "Team token", total: 2500000, shade: "red"},
         ];
 
         let sum = 0;
@@ -1564,7 +1596,7 @@ Profits may be subject to capital gains or other taxes applicable in your jurisd
 
             // adding a black border to the slice
             ctx.strokeStyle = "";
-            ctx.lineWidth = 4;
+            ctx.lineWidth = 1;
             ctx.stroke();
 
             // filling the slices with the corresponding mood's color
@@ -1775,17 +1807,17 @@ setInterval(showSlides, 1000); // Change image every 3 seconds (adjust as needed
 <!-- DITO AND FLOAGING SUPPORT SA BOTTOM RIGHTSIDE NG PAGE  -->
 <div style="position: fixed; bottom: 20px; right: 20px; z-index: 998;">
   <div style="display: flex; align-items: center;">
-    <div id="notificationContainer" style="width: 180px; padding: 10px; background-color: #1F1D2B; border: 2px solid red; border-radius: 20px 0 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">
+    <div id="notificationContainer" style="width: 180px; padding: 10px; background-color: white; border: 1px solid gray; border-radius: 20px 0 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">
       <div style="display: flex; align-items: center; justify-content: space-between;">
-        <p id="notificationText" style="margin: 0; color: red;">Email us for business inquiries and support.</p>
-        <button onclick="closeNotification()" style="background: none; border: none; font-size: 20px; cursor: pointer; color: orange;">
+        <p id="notificationText" style="margin: 0; color: black;">Email us for business inquiries and support.</p>
+        <button onclick="closeNotification()" style="background: none; border: none; font-size: 20px; cursor: pointer; color: black;">
           <i class="fas fa-times"></i>
         </button>
       </div>
     </div>
     <div>
       <a href="mailto:lupiriumx@gmail.com">
-        <button style="width: 60px; height: 60px; border-radius: 50%; background-color: red; color: white; font-size: 20px;">
+        <button style="width: 60px; height: 60px; border-radius: 50%; background-color: gray; color: white; font-size: 20px;">
           <i class="fas fa-envelope"></i>
         </button>
       </a>

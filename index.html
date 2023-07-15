@@ -1186,6 +1186,48 @@ a {
   height: auto; /* Adjust the height as needed */
 }
 
+/*  DITO ANG ADVWRTISEMENT IMAGE */
+.containerz {
+  position: fixed;
+  left: 2px;
+  top: 76%;
+  transform: translate(0, -50%);
+  z-index: 999;
+}
+
+#imageContainerz {
+  position: relative;
+  display: inline-block;
+}
+
+@media (max-width: 767px) {
+  #imageContainerz img {
+    width: 200px;
+    height: auto;
+    border: 1px solid white;
+  }
+}
+
+@media (min-width: 768px) {
+  #imageContainerz img {
+    width: 300px;
+    height: auto;
+    border: 1px solid white;
+  }
+}
+
+#closeButtonz {
+  position: absolute;
+  top: -10px;
+  right: -30px;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  font-size: 20px;
+}
+
+/* END */
+
 
 
   </style>
@@ -1241,6 +1283,16 @@ a {
 
 <div class="landingpage">
 <h1></h1>
+
+<!-- DITO ANG ADVWRTUAEMWNT -->
+<div class="containerz">
+  <div id="imageContainerz">
+   <a href="./"> <img src="ads.gif" alt="Floating Image"></a>
+    <button id="closeButtonz">X</button>
+  </div>
+</div>
+
+<!-- END -->
 
 <div class="container">
   <div class="image-container">
@@ -1568,6 +1620,22 @@ Profits may be subject to capital gains or other taxes applicable in your jurisd
 
 
     <!--   START NG JAVA SCRIPT DITO   -->
+
+<!-- DITO ANG JS NG ADVERTISEMENT -->
+<script>
+document.getElementById('closeButtonz').addEventListener('click', function() {
+  document.getElementById('imageContainerz').style.display = 'none';
+});
+
+document.getElementById('imageContainerz').addEventListener('click', function() {
+  // Handle click on the image
+  // Add your custom logic here
+});
+
+</script>
+
+<!-- END -->
+
 
 
 <!--  DITO ANG PIECHART JAVA SCRIPT  -->

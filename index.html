@@ -1231,6 +1231,35 @@ a {
   font-size: 20px;
 }
 
+.adsIcon {
+  position: absolute;
+  top: -26px;
+  left: -1px;
+  background-color: #f44336;
+  color: white;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.adsIcon:before {
+  content: "Ads";
+}
+
+.adsIcon:before,
+.adsIcon {
+  position: absolute;
+  z-index: 1;
+}
+
+.adsIcon:before {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
 /* END */
 
 
@@ -1348,12 +1377,14 @@ a {
 <!-- DITO ANG ADVWRTUAEMWNT -->
 <div class="containerz">
   <div id="imageContainerz">
-    <a href="./">
+    <a href="#" id="imageLink">
       <img id="imagez" src="" alt="Floating Image">
+      <span class="adsIcon">Ads</span>
     </a>
     <button id="closeButtonz">X</button>
   </div>
 </div>
+
 
 <!-- END -->
 
@@ -1712,31 +1743,37 @@ function hideNotification() {
 <!-- DITO ANG JS NG ADVERTISEMENT -->
 <script>
 var images = [
-  "ads.gif",
-  "ads.gif",
-  "ads.gif",
-  "ads.gif"
+  { src: "ads.gif", link: "./" },
+  { src: "onchainsperm.gif", link: "https://rarible.com/onchainsperm" },
+  { src: "ads.gif", link: "./" },
+  { src: "onchainsperm.gif", link: "https://rarible.com/onchainsperm" }
 ];
 
 var currentIndex;
 var imageElement = document.getElementById('imagez');
+var imageLinkElement = document.getElementById('imageLink');
+var closeButton = document.getElementById('closeButtonz');
 
-document.getElementById('closeButtonz').addEventListener('click', function() {
+closeButton.addEventListener('click', function(event) {
+  event.stopPropagation(); // Prevent click event propagation to the image
   document.getElementById('imageContainerz').style.display = 'none';
 });
 
-document.getElementById('imageContainerz').addEventListener('click', function() {
-  // Handle click on the image
-  // Add your custom logic here
+imageLinkElement.addEventListener('click', function(event) {
+  event.preventDefault(); // Prevent default link behavior
+  var currentImage = images[currentIndex];
+  window.location.href = currentImage.link;
 });
 
 function displayRandomImage() {
   currentIndex = Math.floor(Math.random() * images.length);
-  var imagePath = images[currentIndex];
-  imageElement.src = imagePath;
+  var currentImage = images[currentIndex];
+  imageElement.src = currentImage.src;
+  imageLinkElement.href = currentImage.link;
 }
 
 window.addEventListener('load', displayRandomImage);
+
 
 </script>
 

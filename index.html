@@ -565,14 +565,36 @@ a {
   justify-content: center;
   width: 50px;
   height: 50px;
-  margin-right: 10px;
-  margin-left: 10px;
+  margin-right: 5px;
+  margin-left: 1px;
   border-radius: 50%;
   font-size: 24px;
   color: red;
   text-decoration: none;
   transition: transform 0.3s;
 }
+#top-navbar .btnz {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+  margin-left: 1px;
+  border-radius: 50%;
+  font-size: 24px;
+  color: red;
+  text-decoration: none;
+  transition: transform 0.3s;
+}
+#top-navbar .btnz:hover {
+  transform: scale(1.1); /* Adjust the scale factor as desired */
+}
+
+    #top-navbar .btnz i {
+      margin-left: 2px;
+    }
+
 
 #top-navbar .btn:hover {
   transform: scale(1.1); /* Adjust the scale factor as desired */
@@ -1322,13 +1344,10 @@ a {
   <h1></h1>
 <section id="my-section" class="top-navbar">
 <div id="top-navbar">
-  <div class="btn btn-square rounded-circle me-1" onclick="handleDiscordClick()">
-    <i class="fab fa-discord"></i>
-  </div>
   <div class="btn btn-square rounded-circle me-1" onclick="handleTelegramClick()">
     <i class="fab fa-telegram"></i>
   </div>
-  <div class="btn btn-square rounded-circle me-1" onclick="handleTwitterClick()">
+  <div class="btnz btn-square rounded-circle me-1" onclick="handleTwitterClick()">
     <i class="fab fa-twitter"></i>
   </div>
 </div>
@@ -1704,7 +1723,6 @@ Profits may be subject to capital gains or other taxes applicable in your jurisd
   
   <a class="btn btn-square rounded-circle me-1" href="https://twitter.com/lupirium_lupi?t=nucblSZAG1tVOyvWW3_SSw&s=09"><i class="fab fa-twitter"></i></a>
 
-   <a class="btn btn-square rounded-circle me-1" href="./"><i class="fab fa-discord"></i></a>
    <a class="btn btn-square rounded-circle me-1" href="https://t.me/LupiriumOfficial"><i class="fab fa-telegram"></i></a></a>
 </div>
 </div>

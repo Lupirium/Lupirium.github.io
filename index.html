@@ -1524,9 +1524,12 @@ a {
 <div class="button-container">
 <a href="#" class="button-ni-lupi" onclick="buyLupi()">Buy LUPI</a>
 </div>
-<div class="button-container">
-<a href="https://lupirium.com/Metamask/" class="button-ni-lupi" onclick="buyLupi()">Add to Metamask</a>
-</div>
+  <div class="button-container">
+  <button class="button-ni-lupi" onclick="addToken()" style="display: flex; align-items: center;">
+    <span class="metamask-logo"></span>
+    Add to Metamask
+  </button>
+  </div>
   <script src="script.js"></script>
   
 <!--END NG BUTTONS NI LUPI-->
@@ -1844,6 +1847,58 @@ Profits may be subject to capital gains or other taxes applicable in your jurisd
 
 
     <!--   START NG JAVA SCRIPT DITO   -->
+
+<!-- METAMASK -->
+
+    <script>
+      async function addToken() {
+        console.log('Adding token...');
+        const tokenAddress = '0x100E2CE96d614E95EF3ECf2f4aA90C2057Aca0D0';
+        const tokenSymbol = 'LUPI';
+        const tokenDecimals = 18;
+        const tokenImage = 'https://raw.githubusercontent.com/Lupirium/Airdrop/main/lupirium.png';
+
+        if (typeof ethereum !== 'undefined') {
+          try {
+            const wasAdded = await ethereum.request({
+              method: 'wallet_watchAsset',
+              params: {
+                type: 'ERC20',
+                options: {
+                  address: tokenAddress,
+                  symbol: tokenSymbol,
+                  decimals: tokenDecimals,
+                  image: tokenImage,
+                  networkId: '56' // Specify the network ID for BSC
+                },
+              },
+            });
+
+            if (wasAdded) {
+              console.log('Token added!');
+            } else {
+              console.log('Token not added.');
+            }
+          } catch (error) {
+            console.log('Error adding token:', error);
+          }
+        } else {
+          console.log('Web3 provider not available');
+        }
+      }
+
+      function confirmAddToken() {
+        const confirmed = window.confirm("Please confirm the transaction in your wallet");
+        if (confirmed) {
+          addToken();
+        }
+      }
+    </script>
+
+<!-- END -->
+
+
+
 
 
 

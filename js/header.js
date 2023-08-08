@@ -12,10 +12,10 @@ _CONTRACT_DATA[_NETWORK_ID] = {
     explorer_url: 'https://testnet.bscscan.com',
     STACKING: {
         sevenDays: {
-            address: '0xA41eC62c6F222aA2EBbB9bd743F6e59e08e6cb3b',
+            address: '0x7bE8cFC984CB6ed043fEf73f92595e803f4a8cAD',
         },
         tenDays: {
-            address: '0xA41eC62c6F222aA2EBbB9bd743F6e59e08e6cb3b'
+            address: '0x7bE8cFC984CB6ed043fEf73f92595e803f4a8cAD'
         },
         thirtyTwoDays: {
             address: '0xA41eC62c6F222aA2EBbB9bd743F6e59e08e6cb3b'

@@ -1383,9 +1383,80 @@ a {
   border-radius: 15px;
   margin-bottom: 5px;
   height: auto; /* Adjust the height as needed */
+}
+/* END */
+#divbg5 {
+  background-color: solid black;
+ padding-top: 5px; /* Adjust the top padding as needed */
+  padding-bottom: 5px; 
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 5px;
+  height: auto; /* Adjust the height as needed */
+}
+
+/* ANIMATED BUTTON */
+
+.underlined-a {
+  text-decoration: none;
+  color: aqua;
+  padding-bottom: 0.15em;
+  box-sizing: border-box;
+  box-shadow: inset 0 -0.2em 0 aqua;
+  transition: 0.2s;
+  &:hover {
+    color: #222;
+    box-shadow: inset 0 -2em 0 aqua;
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+}
 
 
-
+.brk-btn {
+  position: relative;
+  background: none;
+  margin-left: 15px;
+  color: aqua;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 0.2em solid aqua;
+  padding: 0.5em 1em;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10%;
+    background: #222;
+    height: 0.3em;
+    right: 20%;
+    top: -0.21em;
+    transform: skewX(-45deg);
+    -webkit-transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10%;
+    background: #222;
+    height: 0.3em;
+    left: 20%;
+    bottom: -0.25em;
+    transform: skewX(45deg);
+    -webkit-transition: all 0.45 cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  &:hover {
+    &::before {
+      right: 80%;
+    }
+    &::after {
+      left: 80%;
+    }
+  }
+}
+/* END */
 
 
   </style>
@@ -1510,9 +1581,26 @@ a {
     <button id="closeButtonz">X</button>
   </div>
 </div>
-
-
 <!-- END -->
+<div id="divbg5">
+<link href="https://fonts.googleapis.com/css?family=Dosis:700" rel="stylesheet">
+
+<br/>
+<a href="https://lupirium.com/staking" class="brk-btn">
+  LUPI Staking
+</a>
+<a  class="brk-btn">
+  Flip LUPI
+</a>
+<h1></h1>
+<h1>🐺</h1>
+<a  class="brk-btn">
+  LUPI lotto
+</a>
+<p>
+</p>
+<h1></h1>
+</div>
 
 <div class="container">
   <div class="image-container">
@@ -1744,7 +1832,9 @@ In the world of crypto,You don't have to trust developers and creators instead t
       <h3>Phase 3</h3>
       <div class="scrolling-section">
         <p class="p2">Collaboration and Partnership</p>
-        <p class="p2">Staking and Mini games</p>
+        <p class="p2">LUPI Staking (✔️)</p>
+        <p class="p2">Flip LUPI Game</p>
+        <p class="p2">LUPI Lotto Game</p>
         <p class="p2">CEX Listings</p>
       </div>
     </div>
